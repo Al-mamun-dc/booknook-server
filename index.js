@@ -103,7 +103,7 @@ app.get('/new-arrivals', async (req, res) => {
 });
 
 // My Added Books
-app.get('/my-books', async (req, res) => {
+app.get('/my-books', verfyToken, async (req, res) => {
     const email = req.user.email;
 
     const result = await addCollection
