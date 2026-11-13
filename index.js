@@ -32,7 +32,7 @@ const borrowCollection = db.collection("borrows");
 
 // JWT Middleware
 const JWKS = createRemoteJWKSet(
-    new URL("http://localhost:3000/api/auth/jwks")
+    new URL(`${process.env.CLIENT_URL}/api/auth/jwks`)
 )
 
 const verfyToken = async (req, res, next) => {
@@ -298,3 +298,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running at ${PORT}`);
 });
+
+
