@@ -70,7 +70,7 @@ app.post('/add-books', verfyToken, async (req, res) => {
 })
 
 // Get All Books
-app.get('/all-books', verfyToken, async (req, res) => {
+app.get('/all-books', async (req, res) => {
     const result = await addCollection.find().toArray();
     res.send(result);
 })
